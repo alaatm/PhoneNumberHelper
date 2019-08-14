@@ -21,7 +21,6 @@ namespace PhoneNumberHelper.Test
         [InlineData("966501111111", "SA", true, "+966501111111")]
         [InlineData("9660501111111", "SA", true, "+966501111111")]
         [InlineData("966O5o1111111", "SA", true, "+966501111111")]
-
         [InlineData("9669901111111", "SA", false, "9669901111111")]
         [InlineData("501111111", null, false, "501111111")]
         public void TryNormalizeRcTests(string phoneNumber, string regionCode, bool expectedResult, string expectedNormalizedPhoneNumber)
@@ -47,7 +46,6 @@ namespace PhoneNumberHelper.Test
         [InlineData("966501111111", "Asia/Riyadh", true, "+966501111111")]
         [InlineData("9660501111111", "Asia/Riyadh", true, "+966501111111")]
         [InlineData("966O5o1111111", "Asia/Riyadh", true, "+966501111111")]
-
         [InlineData("9669901111111", "Asia/Riyadh", false, "9669901111111")]
         [InlineData("501111111", null, false, "501111111")]
         public void TryNormalizeTzTests(string phoneNumber, string timezone, bool expectedResult, string expectedNormalizedPhoneNumber)
@@ -55,6 +53,14 @@ namespace PhoneNumberHelper.Test
             var result = PhoneNumber.TryNormalizeTz(phoneNumber, timezone, out var normalizedPhoneNumber);
             Assert.Equal(expectedResult, result);
             Assert.Equal(expectedNormalizedPhoneNumber, normalizedPhoneNumber);
+        }
+
+        [Fact]
+        public void TryNormalizeTz_throws_for_invalid_timezone()
+        {
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() => PhoneNumber.TryNormalizeTz("501111111", "invalidTZ", out var normalized));
+            Assert.Equal("timezone", ex.ParamName);
+            Assert.Equal("The provided timezone does not exist.\r\nParameter name: timezone", ex.Message);
         }
 
         [Theory]
