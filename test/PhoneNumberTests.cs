@@ -26,7 +26,7 @@ namespace PhoneNumberHelper.Test
         [InlineData("501111111", null, false, "501111111")]
         public void TryNormalizeRcTests(string phoneNumber, string regionCode, bool expectedResult, string expectedNormalizedPhoneNumber)
         {
-            var result = PhoneNumberHelper.TryNormalizeRc(phoneNumber, regionCode, out var normalizedPhoneNumber);
+            var result = PhoneNumber.TryNormalizeRc(phoneNumber, regionCode, out var normalizedPhoneNumber);
             Assert.Equal(expectedResult, result);
             Assert.Equal(expectedNormalizedPhoneNumber, normalizedPhoneNumber);
         }
@@ -52,7 +52,7 @@ namespace PhoneNumberHelper.Test
         [InlineData("501111111", null, false, "501111111")]
         public void TryNormalizeTzTests(string phoneNumber, string timezone, bool expectedResult, string expectedNormalizedPhoneNumber)
         {
-            var result = PhoneNumberHelper.TryNormalizeTz(phoneNumber, timezone, out var normalizedPhoneNumber);
+            var result = PhoneNumber.TryNormalizeTz(phoneNumber, timezone, out var normalizedPhoneNumber);
             Assert.Equal(expectedResult, result);
             Assert.Equal(expectedNormalizedPhoneNumber, normalizedPhoneNumber);
         }
@@ -63,7 +63,7 @@ namespace PhoneNumberHelper.Test
         [InlineData("+966901111111", false)]
         public void IsValidNumber(string phoneNumber, bool expectedResult)
         {
-            var result = PhoneNumberHelper.IsValidNumber(phoneNumber);
+            var result = PhoneNumber.IsValidNumber(phoneNumber);
             Assert.Equal(expectedResult, result);
         }
     }

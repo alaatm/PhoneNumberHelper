@@ -7,7 +7,7 @@ using PhoneNumbers;
 
 namespace PhoneNumberHelper
 {
-    public static class PhoneNumberHelper
+    public static class PhoneNumber
     {
         private static PhoneNumberUtil _phoneUtil;
         private static Dictionary<string, List<string>> _regionTimezoneMap;
