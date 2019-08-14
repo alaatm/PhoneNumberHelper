@@ -74,7 +74,7 @@ Task("NugetPush")
 
     var settings = new DotNetCoreNuGetPushSettings
     {
-        Source = "https://www.myget.org/F/amef/api/v3/index.json",
+        Source = "https://api.nuget.org/v3/index.json",
         ApiKey = EnvironmentVariable("NUGET_API_KEY"),
     };
     
