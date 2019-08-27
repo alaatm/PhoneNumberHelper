@@ -67,6 +67,8 @@ namespace PhoneNumberHelper.Test
         [InlineData("+966501111111", true)]
         [InlineData("+9660501111111", true)]
         [InlineData("+966901111111", false)]
+        [InlineData("966o55555555o", false)]
+        [InlineData("invalid", false)]
         public void IsValidNumber(string phoneNumber, bool expectedResult)
         {
             var result = PhoneNumber.IsValidNumber(phoneNumber);

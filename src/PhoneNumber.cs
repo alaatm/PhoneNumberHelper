@@ -96,7 +96,14 @@ namespace PhoneNumberHelper
         public static bool IsValidNumber(string phoneNumber)
         {
             EnsurePhoneUtil();
-            return _phoneUtil.IsValidNumber(_phoneUtil.Parse(phoneNumber, null));
+            try
+            {
+                return _phoneUtil.IsValidNumber(_phoneUtil.Parse(phoneNumber, null));
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private static string GetRegion(string timezone)
