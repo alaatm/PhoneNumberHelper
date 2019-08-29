@@ -11,7 +11,7 @@
     <PackageProjectUrl>https://github.com/alaatm/PhoneNumberHelper</PackageProjectUrl>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
 
-    <VersionPrefix>0.0.3</VersionPrefix>
+    <VersionPrefix>0.0.4</VersionPrefix>
     <PackageId>PhoneNumberHelper</PackageId>
     <AssemblyName>PhoneNumberHelper</AssemblyName>
 
