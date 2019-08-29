@@ -27,11 +27,17 @@ namespace PhoneNumberHelper
             EnsurePhoneUtil();
             EnsureRegionTimezoneMap();
 
+            normalized = phoneNumber;
+
+            if (String.IsNullOrWhiteSpace(phoneNumber))
+            {
+                return false;
+            }
+
             phoneNumber = phoneNumber
+                .Trim()
                 .Replace("o", "0")
                 .Replace("O", "0");
-
-            normalized = phoneNumber;
 
             try
             {

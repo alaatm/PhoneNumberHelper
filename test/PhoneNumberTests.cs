@@ -6,6 +6,7 @@ namespace PhoneNumberHelper.Test
     public class PhoneNumberHelperTests
     {
         [Theory]
+        [InlineData("  501111111  ", "SA", true, "+966501111111")]
         [InlineData("501111111", "SA", true, "+966501111111")]
         [InlineData("0501111111", "SA", true, "+966501111111")]
         [InlineData("O5o1111111", "SA", true, "+966501111111")]
@@ -23,6 +24,8 @@ namespace PhoneNumberHelper.Test
         [InlineData("966O5o1111111", "SA", true, "+966501111111")]
         [InlineData("9669901111111", "SA", false, "9669901111111")]
         [InlineData("501111111", null, false, "501111111")]
+        [InlineData("", null, false, "")]
+        [InlineData(null, null, false, null)]
         public void TryNormalizeRcTests(string phoneNumber, string regionCode, bool expectedResult, string expectedNormalizedPhoneNumber)
         {
             var result = PhoneNumber.TryNormalizeRc(phoneNumber, regionCode, out var normalizedPhoneNumber);
