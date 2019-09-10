@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="libphonenumber-csharp" Version="8.10.17" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="System.Text.Json" Version="4.6.0-preview9.19421.4" />
   </ItemGroup>
 
   <ItemGroup>

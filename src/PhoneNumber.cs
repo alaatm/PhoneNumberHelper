@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.Text.Json;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Newtonsoft.Json;
 using PhoneNumbers;
 
 namespace PhoneNumberHelper
@@ -149,7 +149,7 @@ namespace PhoneNumberHelper
         {
             if (_regionTimezoneMap == null)
             {
-                _regionTimezoneMap = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(_regionTimezoneMapJson);
+                _regionTimezoneMap = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(_regionTimezoneMapJson);
             }
         }
 
