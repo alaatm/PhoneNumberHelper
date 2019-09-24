@@ -11,7 +11,7 @@
     <PackageProjectUrl>https://github.com/alaatm/PhoneNumberHelper</PackageProjectUrl>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
 
-    <VersionPrefix>0.0.6</VersionPrefix>
+    <VersionPrefix>0.0.7</VersionPrefix>
     <PackageId>PhoneNumberHelper</PackageId>
     <AssemblyName>PhoneNumberHelper</AssemblyName>
 
@@ -22,8 +22,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="libphonenumber-csharp" Version="8.10.17" />
-    <PackageReference Include="System.Text.Json" Version="4.6.0-preview9.19421.4" />
+    <PackageReference Include="libphonenumber-csharp" Version="8.10.19" />
+    <PackageReference Include="System.Text.Json" Version="4.6.0" />
   </ItemGroup>
 
   <ItemGroup>

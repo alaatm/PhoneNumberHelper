@@ -12,15 +12,6 @@ namespace PhoneNumberHelper
         private static PhoneNumberUtil _phoneUtil;
         private static Dictionary<string, List<string>> _regionTimezoneMap;
 
-        public static IEnumerable<string> SupportedTimeZones
-        {
-            get
-            {
-                EnsureRegionTimezoneMap();
-                return _regionTimezoneMap.SelectMany(p => p.Value).Distinct();
-            }
-        }
-
         /// <summary>
         /// Attempts to normalized the given phone number for the given region code.
         /// </summary>
