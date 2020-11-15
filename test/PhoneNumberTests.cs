@@ -63,7 +63,7 @@ namespace PhoneNumberHelper.Test
         {
             var ex = Assert.Throws<ArgumentOutOfRangeException>(() => PhoneNumber.TryNormalizeTz("501111111", "invalidTZ", out var normalized));
             Assert.Equal("timezone", ex.ParamName);
-            Assert.Equal("The provided timezone does not exist.\r\nParameter name: timezone", ex.Message);
+            Assert.Equal("The provided timezone does not exist. (Parameter 'timezone')", ex.Message);
         }
 
         [Theory]
